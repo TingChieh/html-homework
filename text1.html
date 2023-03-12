@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aisaka's Blog</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="favicon.ico" rel="shortcut icon" type="image/ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="nav-container">
+        <div class="nav-container__inner">
+            <img class="addimg" src="./src/img/aisaka.png" alt="aisakalogo" width="40px" align="left">
+            <a class="home-link" href="/" align="left">
+                <font face="SmileySans-Oblique">Aisaka's Blog</font>
+            </a>
+            <ul class="top-nav">
+                <li><a href="/">
+                        <font face="SmileySans-Oblique">Home</font>
+                    </a></li>
+                <li><a href="message.html">
+                        <font face="SmileySans-Oblique">message</font>
+                    </a></li>
+                <li><a href="links.html">
+                        <font face="SmileySans-Oblique">Links</font>
+                    </a></li>
+                <li><a href="about.html">
+                        <font face="SmileySans-Oblique">About</font>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="hero__inner">
+            <h1 style="color:rgb(255, 255, 255)">
+                <font face="SmileySans-Oblique">Hello World!</font>
+            </h1>
+            <h2 style="color:rgb(255, 255, 255)">
+                <font face="SmileySans-Oblique">你好世界</font>
+            </h2>
+            <h3 style="color:rgb(255, 255, 255)">
+                <font face="SmileySans-Oblique"> 欢迎来到 Aisaka 的空间</font>
+            </h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tile-row">
+            <div class="tile">
+                <h4>How to install</h4>
+                <p>树莓派安装 PHP7.3 + Nginx + Mariadb + PHPMyadmin 并搭建博客 Typecho</p>
+                <p>在树莓派上先安装服务器环境：PHP7.3 + Nginx + Mariadb + PHPMyadmin。数据库Mariadb是MySQL的一个分支，API和命令行兼容MySQL。
+                    安装PHP 7.3
+                    添加apt源。编辑apt源配置文件：</p>
+                    <blockquote><pre><code>sudo vi /etc/apt/sources.list.d/raspi.list
+                    </code></pre>
+                    <p>在后面加入一行:</p>
+                    <pre><code>deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi
+                    </code></pre>
+                    <p>更新软件包列表:</p>
+                    <pre><code>sudo apt update
+                    </code></pre>
+                    <p>安装PHP7.3:</p>
+                    <pre><code>sudo apt install -y -t buster php7.3-fpm
+                    </code></pre>
+                    <p>安装过程中会提示某些服务需要重启，选择Yes即可。
+                    测试是否安装成功:
+                    php -v
+                    如果显示php版本号，则安装成功，如下：</p>
+                    <pre><code>
+                    </code></pre>
+                    <p>PHP 7.3.2-3 (cli) (built: Feb 8 2019 15:05:54) ( NTS )</p>
+                    <p>Copyright (c) 1997-2018 The PHP Group</p>
+                    <p>Zend Engine v3.3.2, Copyright (c) 1998-2018 Zend Technologies</p>
+                    <pre><code>with Zend OPcache v7.3.2-3, Copyright (c) 1999-2018, by Zend Technologies
+                    </code></pre>
+                    <p>&nbsp;</p>
+                    </blockquote>
+                    
+                <ul class="tag-list">
+                    <li>PHP</li>
+                    <li>Nginx</li>
+                    <li>PHPMyadmin</li>
+                    <li>Mariadb</li>
+                    <li>Typecho</li>
+                </ul>
+                <a href="https://blog.aisaka.cc/archives/5/" class="button">Read it</a>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <div class="page-footer__inner">
+            Copyright &copy; 2023 Aisaka 坡道闲聊.
+        </div>
+    </footer>
+</body>
+
+</html>

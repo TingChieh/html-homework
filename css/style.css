@@ -2,7 +2,7 @@ html {
     --brand-green: hsl(162, 87%, 21%);
     --dark-green: hsl(162, 88%, 30%);
     --medium-green: hsl(162, 73%, 46%);
-    --text-color: hsl(210, 11%, 15%);
+    --text-color: hsl(0, 1%, 26%);
     --gray: hsl(210, 7%, 56%);
     --light-gray: hsl(210, 17%, 95%);
     --extra-light-gray: hsl(210, 17%, 98%);
@@ -12,11 +12,12 @@ html {
     box-sizing: border-box;
     color: var(--text-color);
 }
+
 @font-face {
     font-family: "SmileySans-Oblique";
     src: url("/src/ttf/SmileySans-Oblique.ttf");
-  }
-  
+}
+
 
 *,
 *::before,
@@ -135,7 +136,7 @@ p {
 }
 
 .hero {
-    background: url(collaboration.jpg) no-repeat;
+    background: url(/src/img/1678603550180.png);
     background-size: cover;
     margin-bottom: 2.5rem;
 }
@@ -165,7 +166,7 @@ p {
 }
 
 .button:hover {
-    background-color: hsl(162, 88%, 30%);
+    background-color: hsl(162, 15%, 44%);
     color: white;
 }
 
@@ -231,4 +232,54 @@ p {
     max-width: 1080px;
     text-align: center;
     font-size: 0.8rem;
+}
+
+.addimg {
+    border-radius: 1em;
+    background-color: #f2f2f2;
+    padding: 2px;
+    border-radius: 1em;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.01em);
+}
+
+.wrap {
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #11c9a4;
+    color: #ffffff;
+    width: 25vw;
+    height: 75px;
+}
+
+td {
+    background-color: #ffffff;
+    width: 50vw;
+    height: 50px;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #77e9d3;
+}
+
+tr:nth-of-type(even) td {
+    background-color: #f3f3f3;
+}
+
+tr:hover td {
+    background-color: #b7b7b7;
+    transition: all 0.3s ease-in-out;
 }

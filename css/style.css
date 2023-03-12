@@ -12,6 +12,11 @@ html {
     box-sizing: border-box;
     color: var(--text-color);
 }
+@font-face {
+    font-family: "SmileySans-Oblique";
+    src: url("/src/ttf/SmileySans-Oblique.ttf");
+  }
+  
 
 *,
 *::before,

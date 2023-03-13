@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>多端访问样式示例</title>
+	<style>
+		@keyframes slide-in {
+			from {
+			  transform: translateY(-100%);
+			}
+			to {
+			  transform: translateY(0);
+			}
+		  }
+		  
+		  #sliding-image {
+			animation-name: slide-in;
+			animation-duration: 1s;
+			animation-timing-function: ease-out;
+		  }		  
+	</style>
+</head>
+
+<body>
+	<!-- 页面内容 -->
+	<h1>多端访问样式示例</h1>
+	<p>这是一段示例文本。</p>
+	<div id="content"></div>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script>
+		document.getElementById('content').innerHTML =
+			marked.parse('# Marke;d in the browser\n\nRendered by **marked**.\n\n| 欢迎访问此网站 | 不过我什么都不会，你就随便看看吧o(*￣▽￣*)o             |\n\n**hh**');
+	</script>
+		<img src="src/img/1678603550180.png" alt="your-image-description">
+</body>
+
+</html>

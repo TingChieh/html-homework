@@ -283,3 +283,48 @@ tr:hover td {
     background-color: #b7b7b7;
     transition: all 0.3s ease-in-out;
 }
+
+/* 根据屏幕尺寸设置不同的样式 */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+#sliding-image {
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}

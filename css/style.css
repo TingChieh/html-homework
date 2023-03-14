@@ -177,7 +177,6 @@ p {
     border: none;
 }
 
-
 .container {
     margin: 0 auto;
     max-width: 1080px;
@@ -209,6 +208,9 @@ p {
 .tag-list {
     list-style: none;
     padding-left: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    counter-reset: num;
 }
 
 .tag-list>li {
@@ -218,6 +220,51 @@ p {
     border-radius: 0.2rem;
     background-color: var(--light-gray);
     line-height: 2.6;
+    opacity: 0;
+    transform: scale(.3);
+    animation:show .8s forwards;
+    transform-origin: left top;
+}
+
+.list li:nth-child(2n + 1) {
+    background: tomato
+}
+.list li:nth-child(3n + 2) {
+    background:royalblue
+}
+.list li:nth-child(9n + 3) {
+    background:violet
+}
+.list li:nth-child(7n + 4) {
+    background:tan;
+    color: #000;
+}
+.list li:nth-child(11n + 5) {
+    background:yellowgreen
+}
+/*animation-delay*/
+
+.list li:nth-child(9n + 1) {
+    animation-delay: 0s;
+}
+.list li:nth-child(9n + 2),.list li:nth-child(9n + 4) {
+    animation-delay: .3s;
+}
+.list li:nth-child(9n + 3),.list li:nth-child(9n + 5),.list li:nth-child(9n + 7) {
+    animation-delay: .6s;
+}
+.list li:nth-child(9n + 6),.list li:nth-child(9n + 8) {
+    animation-delay: .9s;
+}
+.list li:nth-child(9n + 9) {
+    animation-delay: 1.2s;
+}
+
+@keyframes show{
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .page-footer {
@@ -313,18 +360,4 @@ tr:hover td {
     }
 }
 
-@keyframes slide-in {
-    from {
-        transform: translateY(-100%);
-    }
 
-    to {
-        transform: translateY(0);
-    }
-}
-
-#sliding-image {
-    animation-name: slide-in;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-}

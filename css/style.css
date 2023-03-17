@@ -139,13 +139,24 @@ p {
     background: url(/src/img/1678603550180.png);
     background-size: cover;
     margin-bottom: 2.5rem;
+    animation: fade-in 1s ease-in-out;
 }
+@keyframes fade-in {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+    }
 
 .hero__inner {
     max-width: 1080px;
     margin: 0 auto;
     padding: 5.56em 12.5em 12.5em 0;
     text-align: right;
+    overflow: hidden;
+    position: relative;
 }
 
 .hero h2 {
@@ -153,6 +164,16 @@ p {
     letter-spacing: -0.02em;
     margin-top: 0;
     margin-bottom: 0.625rem;
+}
+
+.hero__inner img {
+    width: 20%;
+    height: auto;
+    transition: transform 0.5s ease-out;
+}
+
+.hero__inner:hover img {
+    transform: scale(1.1);
 }
 
 .button {
@@ -222,45 +243,58 @@ p {
     line-height: 2.6;
     opacity: 0;
     transform: scale(.3);
-    animation:show .8s forwards;
+    animation: show .8s forwards;
     transform-origin: left top;
 }
 
 .list li:nth-child(2n + 1) {
     background: tomato
 }
+
 .list li:nth-child(3n + 2) {
-    background:royalblue
+    background: royalblue
 }
+
 .list li:nth-child(9n + 3) {
-    background:violet
+    background: violet
 }
+
 .list li:nth-child(7n + 4) {
-    background:tan;
+    background: tan;
     color: #000;
 }
+
 .list li:nth-child(11n + 5) {
-    background:yellowgreen
+    background: yellowgreen
 }
+
 /*animation-delay*/
 
 .list li:nth-child(9n + 1) {
     animation-delay: 0s;
 }
-.list li:nth-child(9n + 2),.list li:nth-child(9n + 4) {
+
+.list li:nth-child(9n + 2),
+.list li:nth-child(9n + 4) {
     animation-delay: .3s;
 }
-.list li:nth-child(9n + 3),.list li:nth-child(9n + 5),.list li:nth-child(9n + 7) {
+
+.list li:nth-child(9n + 3),
+.list li:nth-child(9n + 5),
+.list li:nth-child(9n + 7) {
     animation-delay: .6s;
 }
-.list li:nth-child(9n + 6),.list li:nth-child(9n + 8) {
+
+.list li:nth-child(9n + 6),
+.list li:nth-child(9n + 8) {
     animation-delay: .9s;
 }
+
 .list li:nth-child(9n + 9) {
     animation-delay: 1.2s;
 }
 
-@keyframes show{
+@keyframes show {
     to {
         opacity: 1;
         transform: scale(1);
@@ -359,5 +393,3 @@ tr:hover td {
         font-size: 18px;
     }
 }
-
-

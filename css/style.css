@@ -18,11 +18,13 @@ html {
     src: url("/src/ttf/SmileySans-Oblique.ttf");
 }
 
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -31,6 +33,9 @@ body {
     line-height: 1.4;
     letter-spacing: 0.01em;
     background-color: var(--extra-light-gray);
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 .fonts-failed body {
@@ -93,6 +98,7 @@ p {
     font-weight: bold;
     letter-spacing: 0.03em;
     text-decoration: none;
+    flex: 1;
 }
 
 .fonts-failed .home-link {
@@ -121,6 +127,25 @@ p {
     letter-spacing: 0.03em;
 }
 
+.top-nav .search-icon {
+    top: 22%;
+    height: 38px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.top-nav .search-icon input {
+    height: 72%;
+    width: 73px;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.top-nav .search-icon
+
 .top-nav a:hover {
     background-color: var(--dark-green);
 }
@@ -139,16 +164,18 @@ p {
     background: url(/src/img/1678603550180.png);
     background-size: cover;
     margin-bottom: 2.5rem;
-    animation: fade-in 1s ease-in-out;
+    animation: fade-in 1.5s ease-in-out;
 }
+
 @keyframes fade-in {
     0% {
-    opacity: 0;
+        opacity: 0;
     }
+
     100% {
-    opacity: 1;
+        opacity: 1;
     }
-    }
+}
 
 .hero__inner {
     max-width: 1080px;
@@ -219,6 +246,15 @@ p {
     background-color: var(--white);
     border-radius: 0.3em;
     padding: 1.5625em;
+    color: var(--clr-accent);
+    border: 10px solid var(--clr-accent);
+    transition: all 0.3s;
+}
+
+.tile:hover {
+    transform: translateY(-10px);
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
 }
 
 .tile>h4 {
@@ -380,16 +416,14 @@ tr:hover td {
     }
 }
 
-@media screen and (min-width: 481px) {
-    body {
-        font-size: 14px;
-    }
+.search-icon button img{
+    width: 24px;
+}
 
-    h1 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 18px;
-    }
+.search-icon button {
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    height: 72%;
+    width: 30px;
+    background: hsl(162, 87%, 21%);
 }

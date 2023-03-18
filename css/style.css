@@ -25,6 +25,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -136,7 +137,7 @@ p {
 
 .top-nav .search-icon input {
     height: 72%;
-    width: 73px;
+    width: 52px;
     border: none;
     outline: none;
     color: #000;
@@ -402,7 +403,10 @@ tr:hover td {
 }
 
 /* 根据屏幕尺寸设置不同的样式 */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 460px) {
+    .home-link {
+        display: none;
+      }
     body {
         font-size: 12px;
     }
@@ -426,4 +430,21 @@ tr:hover td {
     height: 72%;
     width: 30px;
     background: hsl(162, 87%, 21%);
+}
+
+.scrollTop {
+    position: fixed;
+    bottom:  30px;
+    right: 30px;
+    padding: 10px 15px;
+    background-color: hsl(162, 73%, 46%);
+    color: hsl(162, 87%, 21%);
+    border-radius: 5px;
+    border-radius: 1px solid hsl(162, 87%, 21%);
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+}
+.scrollTop:hover {
+    background-color: hsl(162, 87%, 21%);
+    color: hsl(162, 73%, 46%);
 }

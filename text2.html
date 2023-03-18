@@ -20,14 +20,17 @@
             </a>
             <ul class="top-nav">
                 <li><a href="/">
-                        <font face="SmileySans-Oblique">Home</font>
-                    </a></li>
-                <li><a href="links.html">
-                        <font face="SmileySans-Oblique">Links</font>
-                    </a></li>
-                <li><a href="about.html">
-                        <font face="SmileySans-Oblique">About</font>
-                    </a></li>
+                    <font face="SmileySans-Oblique">Home</font>
+                </a></li>
+            <li><a href="blogs.html">
+                    <font face="SmileySans-Oblique">Blog</font>
+                </a></li>
+            <li><a href="links.html">
+                    <font face="SmileySans-Oblique">Links</font>
+                </a></li>
+            <li><a href="about.html">
+                    <font face="SmileySans-Oblique">About</font>
+                </a></li>
                     <li>
                         <form action="https://www.bing.com/search" method="get" class="search-icon">
                             <input type="hidden" name="q1" value="site:aisaka.cc">
@@ -52,32 +55,41 @@
         <div class="tile-row">
             <div class="tile">
                 <h4>How to set</h4>
-                <p>Raspberry Pi 设置 frp</p>
-                [Unit]
-
+                <p>树莓派设置sakura frp开机自启动</p>
+<p>&nbsp;</p>
+<blockquote><p>首先创建文件/etc/systemd/system/sakurafrp.service
+在sakurafrp.service中输入以下内容</p>
+<pre><code>[Unit]
 Description=Sakura Frp Client
-
 After=network-onine.target
-
 [Service]
-
 User=用户
-
 WorkingDirectory=软件所在的文件夹
-
 LimitNOFILE=4096
-
 PIDFile=/var/run/sakurafrp/client.pid
-
 ExecStartPre=sleep 60
-
 ExecStart=软件所在的位置 --su=账号 --sp=密码 --sid=服务器序号
-
 Restart=on-failure
-
 StartLimitInterval=600
-
 [Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>接着输入以下命令：</p>
+<pre><code>systemctl daemon-reload
+</code></pre>
+<p>服务就创建成功了，接下来启动服务：</p>
+<pre><code>systemctl start sakurafrp
+</code></pre>
+<p>将服务设置为开机启动</p>
+<pre><code>systemctl enable sakurafrp
+</code></pre>
+<p>如果要停止运行客户端，只需要输入</p>
+<pre><code>systemctl stop sakurafrp
+</code></pre>
+<p>如果要禁止开机启动，输入</p>
+<pre><code>systemctl disable sakurafrp
+</code></pre>
+<p>&nbsp;</p></blockquote>
                 <ul class="tag-list">
                     <li>Learn</li>
                     <li>Raspberry Pi</li>

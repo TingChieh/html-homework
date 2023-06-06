@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>云朵特效按钮</title>
+    <style>
+        body {
+            /* 初始化 取消页面元素内外边距 */
+            margin: 0;
+            padding: 0;
+            /* 100%窗口高度 */
+            height: 100vh;
+            /* 弹性布局 水平、垂直居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 渐变背景 */
+            background: linear-gradient(200deg, #00c6fb, #66a6ff);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            /* 自定义属性--c */
+            --c: #fff;
+            /* 通过var函数调用自定义属性--c */
+            color: var(--c);
+            width: 240px;
+            height: 60px;
+            border: 3px solid var(--c);
+            border-radius: 10px;
+            text-align: center;
+            line-height: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            /* 相对定位 */
+            position: relative;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            z-index: 1;
+            /* 动画过渡 */
+            transition: 0.5s;
+            margin: 30px;
+        }
+
+        nav ul li:hover {
+            color: #222;
+            /* box-shadow: inset 0 0 0 1px var(--c); */
+        }
+
+        nav ul li span {
+            /* 绝对定位 */
+            position: absolute;
+            width: 25%;
+            height: 100%;
+            background-color: var(--c);
+            /* 先沿Y轴下移，移出按钮范围 */
+            transform: translateY(150%);
+            border-radius: 50%;
+            /* 通过var函数调用自定义属性--n，结合calc函数计算得出left的值 */
+            left: calc((var(--n) - 1) * 25%);
+            transition: 0.5s;
+            /* 计算得出动画延迟时间 */
+            transition-delay: calc((var(--n) - 1) * 0.1s);
+            z-index: -1;
+        }
+
+        nav ul li:hover span {
+            /* 沿Y轴上移并放大 */
+            transform: translateY(0) scale(2);
+        }
+
+        nav ul li span:nth-child(1) {
+            /* 自定义属性 */
+            --n: 1;
+        }
+
+        nav ul li span:nth-child(2) {
+            --n: 2;
+        }
+
+        nav ul li span:nth-child(3) {
+            --n: 3;
+        }
+
+        nav ul li span:nth-child(4) {
+            --n: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                点赞
+                <span></span><span></span><span></span><span></span>
+            </li>
+            <li>
+                关注
+                <span></span><span></span><span></span><span></span>
+            </li>
+            <li>
+                评论
+                <span></span><span></span><span></span><span></span>
+            </li>
+            <li>
+                转发
+                <span></span><span></span><span></span><span></span>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

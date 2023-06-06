@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .nav-container {
+            position: absolute;
+            background-color: #f3a483;
+            top: 0;
+            left: 0;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+        }
+
+        .nav-container__inner {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1080px;
+            margin: 0 auto;
+            /* 设置左右外边距为auto，使导航栏居中 */
+            padding: 0.625em 0;
+            /* 移除内边距 */
+            list-style: none;
+            /* 移除ul元素的默认样式 */
+        }
+
+        .top-nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .top-nav>li {
+            border-radius: 3px;
+            margin-left: 0.625em;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.501);
+        }
+
+        .top-nav a {
+            display: block;
+            padding: 0.3em 1.25em;
+            color: wheat;
+            background: #9b6f5b;
+            text-decoration: none;
+            border-radius: 3px;
+            font-family: 字魂扁桃体;
+        }
+
+        .top-nav a:hover {
+            background-color: #ffc596;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <div class="nav-container__inner">
+            <ul class="top-nav">
+                <ul class="top-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blogs.html">Blog</a></li>
+                    <li><a href="links.html">Links</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+        </div>
+    </nav>
+</body>
+
+</html>
